@@ -31,12 +31,6 @@ export const getEvents = async (): Promise<NotionEvent[]> => {
 
     const response = await notion.databases.query({
         database_id: process.env.NOTION_EVENTS_DB,
-        sorts: [
-            {
-                property: 'Date', // Assumption: There's a 'Date' property
-                direction: 'ascending',
-            },
-        ],
     });
 
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
